@@ -1,0 +1,27 @@
+@Database(entities = arrayOf(Record::class), version = 1)
+@Entity
+@ColumnInfo(name = "Nick")
+@PrimaryKey(autoGenerate = true)
+
+@Dao
+interface RecordDao {
+    @Insert(onConflict= OnConflictStrategy.REPLACE)
+    fun insert(record: Record)
+
+    @Query("select * from Record")
+    fun getAll() : List<Record>
+}
+
+//Todo: Room
+val database = Room.databaseBuilder(this,
+    GameDatabase::class.java, "game.db")
+    .build()
+val record = Record("Mary", 8)
+Thread() {
+    database.recordDao().insert(record)
+    val list = database.recordDao().getAll()
+    for (r in list)
+    {
+        println("${r.nickName}, ${r.counter}, ${r.id}")
+    }
+}.start()

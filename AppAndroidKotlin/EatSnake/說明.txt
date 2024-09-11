@@ -1,0 +1,7 @@
+override fun onDraw(canvas: Canvas)
+override fun onLayout()
+MutableLiveData
+ViewModel
+fixedRateTimer
+postValue
+observe

@@ -1,0 +1,26 @@
+Service
+databinding
+registerForActivityResult
+相機權限取得 
+開啟相機
+Snackbar
+Menu
+data class
+
+fun readJson() {
+        viewModelScope.launch(Dispatchers.IO) {
+            val json = URL("https://api.jsonserve.com/pcLzBT").readText()
+            Log.d(Tag, "onCreate: $json")
+            //myJsonParse(json)
+            val wordsCollection = Gson().fromJson(json, MyJsonClass::class.java)
+            for (w in wordsCollection.words)
+            {
+                Log.d(Tag, "onCreate: ${w.name}, ${w.means}, ${w.star}, ${w.difficulty}")
+            }
+            words.postValue(wordsCollection.words) //Todo: 晚一點的時候有機會再把資料設進去
+        }
+
+    }
+
+adapter
+ViewHolder

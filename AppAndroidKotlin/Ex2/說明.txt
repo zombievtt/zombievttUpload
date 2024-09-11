@@ -1,0 +1,6 @@
+語法
+傳遞資料
+ViewModel
+AlertDialog
+getSharedPreferences
+registerForActivityResult

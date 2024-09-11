@@ -1,0 +1,23 @@
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context="com.example.design.MainActivity">
+    <item
+        android:id="@+id/action_settings"
+        android:title="@string/action_settings"
+        app:showAsAction="never" />
+    <item
+        android:id="@+id/action_camera"
+        android:icon="@android:drawable/ic_menu_camera"
+        android:title="@string/action_camera"
+        app:showAsAction="ifRoom" />
+    <item
+        android:id="@+id/action_test"
+        android:title="action_test" />
+    <item
+        android:id="@+id/action_service"
+        android:title="action_service" />
+    <item
+        android:id="@+id/action_service_stop"
+        android:title="action_service_stop" />
+</menu>
